@@ -1,0 +1,34 @@
+{
+  "name": "CyberFotos",
+  "icon": "https://raw.githubusercontent.com/IceWhaleTech/CasaOS-AppStore/main/Apps/CasaOS/icon.png",
+  "description": "Aplicação para gerenciamento de fotos e vídeos com detecção de rostos e categorização automática.",
+  "screenshot": [],
+  "tagline": "Gerenciador de mídia com IA",
+  "architecture": ["amd64", "arm64"],
+  "category": ["Mídia", "Fotos", "Vídeos"],
+  "port_map": {
+    "8080": "8080"
+  },
+  "scheme": "http",
+  "author": {
+    "name": "CyberFotos Team"
+  },
+  "volumes": [
+    {
+      "container": "/app/data",
+      "host": "/opt/casaos/cyberfotos/data",
+      "description": "Dados da aplicação"
+    }
+  ],
+  "index": "/",
+  "shell": false,
+  "repository": {
+    "url": "https://github.com/seu-usuario/cyberfotos",
+    "stackfile": "docker-compose.yml"
+  },
+  "title": "CyberFotos",
+  "tips": {
+    "before_install": "Certifique-se de que o Docker e o Docker Compose estão instalados.",
+    "after_install": "Acesse a aplicação em http://seu-ip-do-servidor:8080"
+  }
+} 

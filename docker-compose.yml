@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  cyberfotos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cyberfotos
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - cyberfotos_data:/app/data
+    environment:
+      - NODE_ENV=production
+    networks:
+      - cyberfotos_network
+
+volumes:
+  cyberfotos_data:
+    driver: local
+
+networks:
+  cyberfotos_network:
+    driver: bridge 
